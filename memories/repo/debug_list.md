@@ -11,3 +11,4 @@
 | 2026-06-11 | 代理访问和直连访问的浏览器配置不一致 | 浏览器 localStorage 按 origin 隔离，`9090` 和 `39197` 无法共享 yacd 的 `yacd.haishan.me` 配置；需要复用直连状态的服务应使用 `openMode=direct`。 |
 | 2026-06-11 | 禁用 Vite HMR 后页面内容出现但样式丢失 | Vite CSS 模块依赖 `/@vite/client` 导出的 `updateStyle()` 注入样式；HMR shim 不能把该函数留空，需要维护 `style[data-vite-dev-id]`。 |
 | 2026-06-12 | UI 修改服务配置始终失败，改 HTTPS 也无效 | services router 缺少 `express.json()` 导致 POST/PUT 的 `req.body` 为 undefined；健康检查始终用 `http.request()` 不支持 HTTPS；HTTPS 代理和健康检查需加 `rejectUnauthorized: false` 和 `secure: false` |
+| 2026-06-13 | Page Proxy 里 `coding kanban` 打不开 | 目标 8484 端口是 HTTPS，不是 HTTP；配置协议错误会让健康检查离线并触发代理 `ECONNRESET`。将服务配置改为 `protocol=https` 后，`http://10.30.0.22:9999/36ef74bf` 经 Playwright 验证可加载 `Agent Orchestrator`。 |

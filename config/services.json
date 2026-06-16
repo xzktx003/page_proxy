@@ -24,17 +24,19 @@
       "name": "coding kanban",
       "targetIp": "10.30.0.22",
       "targetPort": 8484,
-      "protocol": "http",
+      "protocol": "https",
       "healthCheckPath": "/",
       "icon": null,
       "color": "#3b82f6",
       "description": "",
       "group": "",
       "actions": [],
-      "online": false,
-      "lastCheck": "2026-06-13T09:14:09.646Z",
+      "online": true,
+      "lastCheck": "2026-06-13T13:47:17.699Z",
       "createdAt": "2026-06-10T06:08:01.834Z",
-      "sort": 2
+      "sort": 2,
+      "entryPath": "/",
+      "openMode": "proxy"
     },
     {
       "id": "c8c32ba6-9b72-4021-8ceb-79519680d5f0",
